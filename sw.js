@@ -6,7 +6,9 @@ const urlsToCache = [
     '/app.js',
     '/manifest.json',
     'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css',
-    'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js'
+    'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js',
+    'https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.css',
+    'https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.js'
 ];
 
 self.addEventListener('install', (event) => {

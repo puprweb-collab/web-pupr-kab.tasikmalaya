@@ -6,6 +6,7 @@
     <title>Survey Lokasi - Dinas PUPR Tasikmalaya</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.css" />
     <link rel="manifest" href="manifest.json">
 </head>
 <body>
@@ -15,20 +16,23 @@
     <main>
         <div id="map" style="height: 400px;"></div>
         <button id="getLocation">Dapatkan Lokasi Saya</button>
+        <input type="text" id="search" placeholder="Cari lokasi berdasarkan nama atau zona">
         <form id="locationForm">
             <input type="text" id="name" placeholder="Nama Lokasi" required>
             <textarea id="description" placeholder="Deskripsi"></textarea>
             <select id="zone">
-                <option value="">Pilih Zona</option>
-                <option value="Zona A">Zona A</option>
-                <option value="Zona B">Zona B</option>
-                <!-- Tambah zona sesuai kebutuhan -->
+                <option value="">Pilih Zona Existing</option>
+                <!-- Zona akan diisi otomatis dari data -->
             </select>
+            <input type="text" id="newZone" placeholder="Atau buat zona baru (mis: Zona C)">
             <button type="submit">Tambah Lokasi</button>
         </form>
+        <button id="drawPolygon">Gambar Zona (Polygon)</button>
+        <div id="polygonInfo"></div>
         <ul id="locationList"></ul>
     </main>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.js"></script>
     <script src="app.js"></script>
 </body>
 </html>
